@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Message = () => {
-  return <p>What a beautiful day!</p>;
+const Message = ({ name }) => {
+  return <p>Welcome, {name}!</p>;
 };
 
 export default Message;
