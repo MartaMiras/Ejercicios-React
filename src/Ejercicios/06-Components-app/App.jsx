@@ -1,12 +1,11 @@
+// App.jsx
 import React from 'react';
-import Hello from '../06-Components-app/src/Hello.jsx';
-import Message from './Message';
-import Welcome from './Welcome';
+import AlertClock from './src/AlertClock.jsx';
 
 const App = () => {
   return (
     <div>
-      <Welcome name="John" age={30} />
+      <AlertClock />
     </div>
   );
 };
