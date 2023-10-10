@@ -1,13 +1,19 @@
-// App.jsx
-import React from 'react';
-import AlertClock from './src/AlertClock.jsx';
+import React, { useState } from 'react';
+import AlertClock from './AlertClock';
 
-const App = () => {
+function App() {
+  const [currentTime, setTime] = useState('');
+
+  const handleClick = () => {
+    const time = new Date().toLocaleTimeString();
+    setTime(time);
+  };
+
   return (
     <div>
-      <AlertClock />
+      <AlertClock currentTime={currentTime} setTime={setTime} />
     </div>
   );
-};
+}
 
 export default App;

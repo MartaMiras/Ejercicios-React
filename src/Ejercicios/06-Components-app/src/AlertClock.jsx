@@ -1,12 +1,9 @@
-// AlertClock.jsx
-import React, { useState } from 'react';
+import React from 'react';
 
-const AlertClock = () => {
-  const [currentTime, setCurrentTime] = useState('');
-
+const AlertClock = ({ currentTime, setTime }) => {
   const handleClick = () => {
     const time = new Date().toLocaleTimeString();
-    setCurrentTime(time);
+    setTime(time);
     alert(`The current time is ${time}`);
   };
 
