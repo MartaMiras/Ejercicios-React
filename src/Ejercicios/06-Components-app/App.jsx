@@ -3,12 +3,7 @@ import Hello from '../06-Components-app/src/Hello.jsx';
 import Message from './Message';
 
 const App = () => {
-  return (
-    <div>
-      <Hello />
-      <Message name="John" />
-    </div>
-  );
+  return <Message name="John" age={25} />;
 };
 
 export default App;
