@@ -1,0 +1,35 @@
+What happens if the name prop is a JSX expression instead of a string?
+How do you pass a prop that contains a JSX expression?
+Modify the value passed to the name prop so that it's contained within a strong tag.
+
+If you want to pass a JSX expression as a prop, you can simply include the JSX expression
+in the place where you're using the component. Here's an example of how you can modify
+the App component to pass a prop containing a JSX expression:
+
+App.jsx
+import React from 'react';
+import Hello from '../06-Components-app/src/Hello.jsx';
+import Message from './Message';
+
+const App = () => {
+  const nameJSX = <strong>John</strong>;
+
+  return <Message name={nameJSX} age={25} />;
+};
+
+export default App;
+
+
+Message.jsx
+import React from 'react';
+
+const Message = ({ name, age }) => {
+  return (
+    <div>
+      <p>Welcome, {name}!</p>
+      <p>Your age is {age}.</p>
+    </div>
+  );
+};
+
+export default Message;
