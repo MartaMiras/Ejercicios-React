@@ -1,0 +1,7 @@
+What happens if no name prop is passed to the Welcome component?
+Can you set a default value for the name prop?
+
+Si no se pasa ninguna propiedad de nombre al componente de bienvenida,
+el valor de la propiedad de nombre no estará definido.
+Para establecer un valor predeterminado para la propiedad de nombre,
+puede usar la propiedad defaultProps en el componente de bienvenida.
