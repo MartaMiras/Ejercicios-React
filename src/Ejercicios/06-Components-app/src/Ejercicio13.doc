@@ -1,0 +1,7 @@
+Can you use the Hello component more than once in the App component? What happens if you do?
+
+Sí, puedes usar el componente Hola más de una vez en el componente Aplicación.
+Si lo hace, se representarán varias instancias del componente Hola,
+cada una con su propio "¡Hola, mundo!" encabezado y "¡Qué hermoso día!" mensaje.
+Esto se debe a que los componentes de React son reutilizables y se pueden usar varias
+veces dentro de otros componentes.
