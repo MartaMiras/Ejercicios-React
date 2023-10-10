@@ -1,0 +1,5 @@
+What happens if the name variable is not passed to the function?
+
+JavaScript tratará el nombre como indefinido y cuando intente representar
+la expresión JSX {nombre} dentro de la etiqueta <h1>, generará un error porque no puede
+interpolar indefinido directamente en JSX.

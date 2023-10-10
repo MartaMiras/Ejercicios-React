@@ -1,0 +1,5 @@
+What happens if the name variable contains a JSX expression instead of a string?
+
+Se puede utilizar dentro de la JSX que se devuelve en la función,
+ya que JSX es una extensión de JavaScript y puede contener cualquierexpresión JavaScript válida.
+La expresión JSX se evaluará y se renderizará correctamente.
