@@ -1,0 +1,8 @@
+¿Cómo se puede evitar que el atributo de nombre del botón se imprima
+en la consola cuando se hace clic en la imagen?
+
+Para evitar que el atributo name del botón se imprima en la consola
+cuando se hace clic en la imagen, puedes detener la propagación del evento en el
+controlador de eventos de la imagen. Esto se puede lograr utilizando el método
+stopPropagation() proporcionado por el objeto de evento en React. Al llamar a stopPropagation(),
+se evita que el evento se propague a los elementos padres.
