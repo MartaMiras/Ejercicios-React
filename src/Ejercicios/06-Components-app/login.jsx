@@ -27,6 +27,13 @@ function Login({ onLogin }) {
     onLogin({ username, password, remember });
   };
 
+  const handleReset = () => {
+    // Clear the content of all three inputs
+    setUsername('');
+    setPassword('');
+    setRemember(false);
+  };
+
   // Disable the login button if username or password is empty
   const isLoginDisabled = !username || !password;
 
@@ -65,6 +72,10 @@ function Login({ onLogin }) {
 
       <button type="submit" disabled={isLoginDisabled}>
         Login
+      </button>
+
+      <button type="button" onClick={handleReset}>
+        Reset
       </button>
     </form>
   );
