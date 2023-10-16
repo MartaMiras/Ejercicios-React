@@ -83,3 +83,11 @@ function Login({ onLogin }) {
 
 export default Login;
 
+
+// El evento onSubmit se adjunta al elemento <form> y llama a la función handleSubmit.
+// En la función handleSubmit, event.preventDefault() se utiliza para evitar el comportamiento
+// de envío de formulario predeterminado, lo que provocaría una actualización de la página.
+// En cambio, registra los datos del formulario (nombre de usuario, contraseña, recordar) y
+// llama al accesorio onLogin con estos datos.
+// El botón de inicio de sesión ahora es un elemento <button type="submit"> y al hacer clic
+// en él se activará el envío del formulario, invocando la función handleSubmit.
