@@ -1,0 +1,44 @@
+Al acceder a los datos del formulario, ¿cuáles son las formas en que puede acceder al
+valor actual de las entradas de nombre de usuario y contraseña?
+
+Usando Refs:
+Puedes utilizar referencias (ref) para acceder directamente al valor actual de los elementos
+del DOM. En el ejemplo de UncontrolledLogin, se utilizan refs para los campos de nombre de usuario
+y contraseña.
+const usernameRef = useRef(null);
+const passwordRef = useRef(null);
+
+// Acceder al valor actual
+const usernameValue = usernameRef.current.value;
+const passwordValue = passwordRef.current.value;
+
+Accediendo a través de Evento:
+Puedes acceder al valor actual de los campos de entrada al manejar eventos, por ejemplo,
+el evento de envío del formulario (onSubmit). En el ejemplo, handleSubmit accede al valor
+actual del nombre de usuario y la contraseña a través de event.target.
+const handleSubmit = (event) => {
+  event.preventDefault();
+
+  // Acceder al valor actual a través del evento
+  const username = event.target.username.value;
+  const password = event.target.password.value;
+};
+
+
+Accediendo directamente a través del DOM:
+Puedes acceder al valor actual directamente desde el DOM utilizando funciones como
+document.getElementById o document.querySelector. Sin embargo, este enfoque se desaconseja
+en entornos de React, ya que contradice la filosofía de React de manipular el estado de manera
+declarativa y gestionada.
+const handleSubmit = (event) => {
+  event.preventDefault();
+
+  // Acceder directamente al valor actual desde el DOM
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+};
+
+
+Cada enfoque tiene sus propias ventajas y desventajas, pero generalmente, el uso de refs o
+el acceso a través de eventos de React son más preferidos debido a su integración más limpia
+con el modelo de datos de React y la manipulación del estado.
