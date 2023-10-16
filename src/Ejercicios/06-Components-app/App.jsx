@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Counter from './Counter';
+import MouseClicker from './MouseClicker';
 
 function App() {
   const [currentTime, setTime] = useState('');
@@ -12,6 +13,7 @@ function App() {
   return (
     <div>
       <Counter initialValue={0} incrementAmount={1} decrementAmount={1} />
+      <MouseClicker name="one" />
     </div>
   );
 }
