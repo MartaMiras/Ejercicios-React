@@ -1,0 +1,24 @@
+Intente acceder a los valores del formulario mediante la API FormData.
+¿Cuáles son las ventajas? ¿Cuales son las desventajas?
+
+
+Ventajas:
+Facilidad de uso: La API FormData simplifica la tarea de acceder a los valores del formulario
+y enviarlos a través de una solicitud. Puede ser más fácil de implementar en comparación con
+otras formas de enviar datos, como JSON
+Soporte para archivos adjuntos: La API FormData permite adjuntar archivos a la solicitud, lo
+que puede ser útil en casos como el envío de formularios con campos de carga de archivos
+Compatibilidad con navegadores antiguos: La API FormData es compatible con una amplia gama de
+navegadores, incluidas versiones antiguas, lo que la hace una opción confiable para aplicaciones
+que deben admitir una variedad de entornos
+
+Desventajas:
+Limitaciones en la estructura de datos: La API FormData está diseñada para trabajar con pares
+clave/valor simples y no admite estructuras de datos más complejas, como objetos anidados o
+matrices. Esto puede dificultar la representación de ciertos tipos de datos en la solicitud
+Problemas de rendimiento: En algunos casos, el uso de la API FormData puede afectar el rendimiento
+de la aplicación, especialmente cuando se realizan múltiples solicitudes secuenciales en lugar de
+una sola solicitud que incluye todos los datos necesarios
+Incompatibilidad con ciertos tipos de solicitud: Algunas API pueden no admitir el envío de datos
+a través de FormData, lo que puede requerir el uso de otros métodos de envío de datos, como JSON
+o XML
