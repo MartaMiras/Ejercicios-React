@@ -11,8 +11,6 @@ function App() {
 
   return (
     <div>
-      <AlertClock currentTime={currentTime} setTime={setTime} />
-      {/* Pasar el valor inicial y la cantidad de incremento como accesorios */}
       <Counter initialValue={0} incrementAmount={1} />
     </div>
   );
