@@ -1,0 +1,14 @@
+Al llamar a la función "setter" para incrementar el contador,
+¿el parámetro debería ser una función o un valor inmediato? ¿Por qué?
+
+En resumen, la elección entre una función y un valor inmediato
+depende de los requisitos específicos de tu aplicación y de la lógica que estés
+implementando en la función "setter".
+Si siempre estás incrementando el contador por un valor fijo y conocido de antemano,
+pasar un valor inmediato es más directo y probablemente más eficiente.
+Si el incremento del contador depende de lógica más compleja o dinámica,
+puedes utilizar una función como parámetro para calcular ese valor.g
+La opción de pasar una función también permite la ejecución de código adicional
+antes de obtener el valor final. Por ejemplo, podrías tener lógica dentro de la función
+que determina el valor a incrementar basándose en condiciones específicas.
+
