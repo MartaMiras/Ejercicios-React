@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div>
-      <Counter initialValue={0} incrementAmount={1} />
+      <Counter initialValue={0} incrementAmount={1} decrementAmount={1} />
     </div>
   );
 }
