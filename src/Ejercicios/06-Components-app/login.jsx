@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-function Login() {
-
+function Login({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [remember, setRemember] = useState(false);
@@ -23,7 +22,13 @@ function Login() {
     console.log('Username:', username);
     console.log('Password:', password);
     console.log('Remember:', remember);
+
+    // Call the onLogin prop
+    onLogin({ username, password, remember });
   };
+
+  // Disable the login button if username or password is empty
+  const isLoginDisabled = !username || !password;
 
   return (
     <form onSubmit={handleSubmit}>
@@ -58,9 +63,12 @@ function Login() {
         </label>
       </div>
 
-      <button type="submit">Login</button>
+      <button type="submit" disabled={isLoginDisabled}>
+        Login
+      </button>
     </form>
   );
 }
 
 export default Login;
+
