@@ -1,8 +1,13 @@
 import React from 'react';
-import './container.css'; 
+import './container.css';
 
-function Container({ children }) {
-  return <div className="container">{children}</div>;
+function Container({ title, children }) {
+  return (
+    <div className="container">
+      {title && <h2 className="container-title">{title}</h2>}
+      {children}
+    </div>
+  );
 }
 
 export default Container;
