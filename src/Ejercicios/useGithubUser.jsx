@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 
 function useGithubUser(username) {
-  const [userData, setUserData] = useState(null);
+  const [state, setState] = useState({
+    userData: null,
+    loading: true,
+    error: null,
+  });
 
   useEffect(() => {
     const apiUrl = `https://api.github.com/users/${username}`;
 
-    // Fetch user data from the GitHub API
     fetch(apiUrl)
       .then((response) => {
         if (!response.ok) {
@@ -15,14 +18,24 @@ function useGithubUser(username) {
         return response.json();
       })
       .then((data) => {
-        setUserData(data);
+        setState({ userData: data, loading: false, error: null });
       })
       .catch((error) => {
+        setState({ userData: null, loading: false, error });
         console.error(error);
       });
   }, [username]);
 
-  return userData;
+  const fetchData = () => {
+    setState({ ...state, loading: true });
+  };
+
+  return {
+    user: state.userData,
+    error: state.error,
+    loading: state.loading,
+    fetchData,
+  };
 }
 
 export default useGithubUser;
