@@ -33,8 +33,15 @@ const App = () => {
           <Route path="users/:username" element={<ShowGithubUser />} />
           <Route path="login" element={<LoginForm />} />
           <Route path="todo" element={<TodoList />} />
+
+          {/* "Not Found" route */}
+          <Route element={<NotFound />} />
         </Routes>
       </div>
     </BrowserRouter>
   );
+};
+
+const NotFound = () => {
+  return <h2>Not Found - 404 Error</h2>;
 };
