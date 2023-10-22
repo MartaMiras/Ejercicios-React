@@ -5,6 +5,7 @@ import React from 'react';
 import ShowGithubUser from './Ejercicios/ShowGithubUser'; 
 import LoginForm from './Ejercicios/LoginForm'; 
 import TodoList from './Ejercicios/TodoList';
+import GithubUserList from './Ejercicios/GithubUserList';
 
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="users/:username" element={<ShowGithubUser />} />
           <Route path="login" element={<LoginForm />} />
           <Route path="todo" element={<TodoList />} />
+          <Route path="users" element={<GithubUserList />} />
 
           {/* "Not Found" route */}
           <Route element={<NotFound />} />
