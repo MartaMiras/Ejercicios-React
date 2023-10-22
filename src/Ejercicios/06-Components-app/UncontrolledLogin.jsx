@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import './tailwind.scss';
 
 function UncontrolledLogin({ onLogin }) {
   const usernameRef = useRef(null);
@@ -7,7 +8,7 @@ function UncontrolledLogin({ onLogin }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
+
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
     const remember = rememberRef.current.checked;
@@ -29,39 +30,42 @@ function UncontrolledLogin({ onLogin }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="username">Username:</label>
+      <div className="mb-4">
+        <label htmlFor="username" className="block text-gray-600">Username:</label>
         <input
           type="text"
           id="username"
           ref={usernameRef}
+          className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-200"
         />
       </div>
 
-      <div>
-        <label htmlFor="password">Password:</label>
+      <div className="mb-4">
+        <label htmlFor="password" className="block text-gray-600">Password:</label>
         <input
           type="password"
           id="password"
           ref={passwordRef}
+          className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-200"
         />
       </div>
 
-      <div>
-        <label>
+      <div className="mb-4">
+        <label className="flex items-center text-gray-600">
           <input
             type="checkbox"
             ref={rememberRef}
+            className="mr-2"
           />
           Remember me
         </label>
       </div>
 
-      <button type="submit">
+      <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
         Login
       </button>
 
-      <button type="button" onClick={handleReset}>
+      <button type="button" onClick={handleReset} className="mt-4 bg-gray-300 hover:bg-gray-400 text-gray-600 py-2 px-4 rounded">
         Reset
       </button>
     </form>
