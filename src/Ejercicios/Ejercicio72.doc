@@ -1,0 +1,10 @@
+Remove the Context Provider. What happens to the Clock component? Why?
+
+
+Si elimina el proveedor de contexto que envuelve el componente Clock,
+el componente Clock no podrá acceder a la información de lenguaje a través del contexto
+y el acceso a la variable language resultará en un error.
+el componente Clock dependerá de la información proporcionada por el proveedor de contexto.
+Sin el proveedor de contexto, el componente Clock no podrá funcionar correctamente y
+mostrará un mensaje en lugar de la hora actual. Para que el Clock funcione correctamente,
+el proveedor de contexto debe estar presente en la jerarquía de componentes superior.
