@@ -35,6 +35,7 @@ const App = () => {
           <Route path="login" element={<LoginForm />} />
           <Route path="todo" element={<TodoList />} />
           <Route path="users" element={<GithubUserList />} />
+          <Route index element={<UserListIndex />} />
 
           {/* "Not Found" route */}
           <Route element={<NotFound />} />
