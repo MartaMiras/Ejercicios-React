@@ -1,32 +1,16 @@
-import React, { useContext } from 'react';
-import { LanguageProvider, LanguageContext } from './LanguageContext';
-import Clock from './Clock'; // Import your Clock component
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Welcome from './Ejercicios/06-Components-app/src/Welcome';
+import GithubUser from './GithubUser';
 
-function App() {
+
+const App = () => {
   return (
-    <LanguageProvider>
-      <div>
-        <LanguageSelector />
-        <Clock />
-      </div>
-    </LanguageProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Welcome name="YourName" />} />
+        <Route path="users/:username" element={<ShowGithubUser />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
-
-function LanguageSelector() {
-  const { language, setLanguage } = useContext(LanguageContext);
-
-  const handleLanguageChange = (e) => {
-    setLanguage(e.target.value);
-  };
-
-  return (
-    <select value={language} onChange={handleLanguageChange}>
-      <option value="en">English</option>
-      <option value="es">Español</option>
-    </select>
-  );
-}
-
-export default App;
+};
 
