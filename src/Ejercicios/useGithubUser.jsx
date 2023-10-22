@@ -1,6 +1,15 @@
 import useSWR from 'swr';
 
 function useGithubUser(username) {
+  if (username === null) {
+    return {
+      user: null,
+      error: null,
+      loading: false,
+      fetchData: () => {}, // A dummy function to maintain the same interface
+    };
+  }
+
   const apiUrl = `https://api.github.com/users/${username}`;
 
   const { data: user, error, isValidating: loading, mutate: fetchData } = useSWR(
