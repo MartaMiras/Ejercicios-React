@@ -9,6 +9,10 @@ function TodoList() {
     document.getElementById("newItem").value = "";
   }
 
+  function resetItems() {
+    setItems([]);
+  }
+
   return (
     <div>
       <ul>
@@ -18,6 +22,9 @@ function TodoList() {
       </ul>
       <input type="text" id="newItem" />
       <button onClick={addItem}>Add Item</button>
+      <button onClick={resetItems}>Reset</button> 
     </div>
   );
 }
+
+export default TodoList;
