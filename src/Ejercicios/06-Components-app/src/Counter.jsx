@@ -29,9 +29,17 @@ function Counter({ initialValue, incrementAmount, decrementAmount }) {
     }
   }, [counter]);
 
+  const counterDisplayStyle = {
+    fontSize: '24px',
+    fontWeight: 'bold',
+    backgroundColor: 'lightblue',
+    padding: '10px',
+    borderRadius: '5px',
+  };
+
   return (
     <div>
-      <CounterDisplay counter={counter} />
+      <CounterDisplay counter={counter} style={counterDisplayStyle} />
       <button onClick={incrementCounter}>Increment</button>
       <button onClick={decrementCounter}>Decrement</button>
       <button onClick={resetCounter}>Reset</button>
