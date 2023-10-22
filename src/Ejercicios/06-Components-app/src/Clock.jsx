@@ -1,25 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import './Clock.scss';
+import React, { useState, useEffect, useContext } from 'react';
+import { LanguageContext } from './LanguageContext';
 
 function Clock() {
   const [currentTime, setCurrentTime] = useState(new Date());
+  const { language } = useContext(LanguageContext);
 
   useEffect(() => {
-    // Función que actualiza la hora actual
     const updateTime = () => {
       setCurrentTime(new Date());
     };
 
-    // Establecer un intervalo que llame a updateTime cada segundo
     const intervalId = setInterval(updateTime, 1000);
 
-    // Limpieza: detener el intervalo cuando el componente se desmonta
     return () => clearInterval(intervalId);
-  }, []); // El efecto se ejecuta solo en el montaje inicial
+  }, []);
+
+  const translations = {
+    en: 'Current Time',
+    es: 'Hora Actual', 
+  };
 
   return (
     <div>
-      <h2>Current Time: {currentTime.toLocaleTimeString()}</h2>
+      <h2>{translations[language]}: {currentTime.toLocaleTimeString()}</h2>
     </div>
   );
 }
