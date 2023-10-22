@@ -1,23 +1,18 @@
-import React, { useState } from 'react';
-import Counter from './Counter';
-import MouseClicker from './MouseClicker';
-import MultiButton from './MultiButton';
+// App.js
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Welcome from './Welcome';
 
-function App() {
-  const [currentTime, setTime] = useState('');
 
-  const handleClick = () => {
-    const time = new Date().toLocaleTimeString();
-    setTime(time);
-  };
-
+const App = () => {
   return (
-    <div>
-      <Counter initialValue={0} incrementAmount={1} decrementAmount={1} />
-      <MouseClicker name="one" />
-      <MultiButton />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Welcome name="YourName" />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
+
