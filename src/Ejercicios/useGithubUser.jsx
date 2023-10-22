@@ -6,13 +6,13 @@ function useGithubUser(username) {
       user: null,
       error: null,
       loading: false,
-      fetchData: () => {}, // A dummy function to maintain the same interface
+      refetch: () => {}, // A dummy function when username is null
     };
   }
 
   const apiUrl = `https://api.github.com/users/${username}`;
 
-  const { data: user, error, isValidating: loading, mutate: fetchData } = useSWR(
+  const { data: user, error, isValidating: loading, revalidate: refetch } = useSWR(
     apiUrl,
     async (url) => {
       const response = await fetch(url);
@@ -30,7 +30,7 @@ function useGithubUser(username) {
     user,
     error,
     loading,
-    fetchData,
+    refetch,
   };
 }
 
