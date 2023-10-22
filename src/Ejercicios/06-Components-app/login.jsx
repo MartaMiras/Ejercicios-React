@@ -23,7 +23,7 @@ function Login({ onLogin }) {
     console.log('Password:', password);
     console.log('Remember:', remember);
 
-    // Call the onLogin prop
+    // Call onLogin prop
     onLogin({ username, password, remember });
   };
 
@@ -34,8 +34,15 @@ function Login({ onLogin }) {
     setRemember(false);
   };
 
+  // Determine background color based on password length
+  const buttonBackgroundColor = password.length < 8 ? 'red' : 'green';
+
   // Disable the login button if username or password is empty
   const isLoginDisabled = !username || !password;
+
+  const buttonStyle = {
+    backgroundColor: buttonBackgroundColor,
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -70,7 +77,7 @@ function Login({ onLogin }) {
         </label>
       </div>
 
-      <button type="submit" disabled={isLoginDisabled}>
+      <button type="submit" disabled={isLoginDisabled} style={buttonStyle}>
         Login
       </button>
 
@@ -82,12 +89,3 @@ function Login({ onLogin }) {
 }
 
 export default Login;
-
-
-// El evento onSubmit se adjunta al elemento <form> y llama a la función handleSubmit.
-// En la función handleSubmit, event.preventDefault() se utiliza para evitar el comportamiento
-// de envío de formulario predeterminado, lo que provocaría una actualización de la página.
-// En cambio, registra los datos del formulario (nombre de usuario, contraseña, recordar) y
-// llama al accesorio onLogin con estos datos.
-// El botón de inicio de sesión ahora es un elemento <button type="submit"> y al hacer clic
-// en él se activará el envío del formulario, invocando la función handleSubmit.
