@@ -1,21 +1,32 @@
-import React from 'react';
-import Colors from './Colors';
+import React, { useContext } from 'react';
+import { LanguageProvider, LanguageContext } from './LanguageContext';
+import Clock from './Clock'; // Import your Clock component
 
 function App() {
-  const colorList = [
-    { id: 1, name: 'Red' },
-    { id: 2, name: 'Green' },
-    { id: 3, name: 'Blue' },
-    { id: 4, name: 'Yellow' },
-    { id: 5, name: 'Purple' },
-  ];
+  return (
+    <LanguageProvider>
+      <div>
+        <LanguageSelector />
+        <Clock />
+      </div>
+    </LanguageProvider>
+  );
+}
+
+function LanguageSelector() {
+  const { language, setLanguage } = useContext(LanguageContext);
+
+  const handleLanguageChange = (e) => {
+    setLanguage(e.target.value);
+  };
 
   return (
-    <div className="App">
-      <h1>Color List</h1>
-      <Colors items={colorList} />
-    </div>
+    <select value={language} onChange={handleLanguageChange}>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
   );
 }
 
 export default App;
+
