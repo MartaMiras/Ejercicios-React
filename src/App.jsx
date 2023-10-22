@@ -1,20 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Colors from './Colors';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const colorList = [
+    { id: 1, name: 'Red' },
+    { id: 2, name: 'Green' },
+    { id: 3, name: 'Blue' },
+    { id: 4, name: 'Yellow' },
+    { id: 5, name: 'Purple' },
+  ];
 
   return (
-    <>
-      <div>
-
-    <script type="module" src="/src/Ejercicios/1JSX.js"></script>   
-        
-      </div>
-    </>
-  )
+    <div className="App">
+      <h1>Color List</h1>
+      <Colors items={colorList} />
+    </div>
+  );
 }
 
-export default App
+export default App;
