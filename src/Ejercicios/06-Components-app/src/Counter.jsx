@@ -1,25 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import CounterDisplay from './CounterDisplay';
 
 function Counter({ initialValue, incrementAmount, decrementAmount }) {
   const [counter, setCounter] = useState(initialValue);
+  const directionRef = useRef('initial');
 
   const incrementCounter = () => {
-    setCounter(counter + incrementAmount);
+    const newValue = counter + incrementAmount;
+    setCounter(newValue);
+    directionRef.current = newValue > counter ? 'up' : 'down';
   };
 
   const decrementCounter = () => {
-    setCounter(counter - decrementAmount);
+    const newValue = counter - decrementAmount;
+    setCounter(newValue);
+    directionRef.current = newValue < counter ? 'down' : 'up';
   };
 
   const resetCounter = () => {
     setCounter(initialValue);
+    directionRef.current = 'initial';
   };
 
-  // useEffect para imprimir el valor actual del contador en la consola
   useEffect(() => {
     console.log(`Counter value: ${counter}`);
-  }, [counter]); // El efecto se ejecutará cada vez que el valor de 'counter' cambie
+    if (directionRef.current !== 'initial') {
+      console.log(`Direction: ${directionRef.current}`);
+    }
+  }, [counter]);
 
   return (
     <div>
