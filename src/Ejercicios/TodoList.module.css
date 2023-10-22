@@ -1,0 +1,34 @@
+/* TodoList.module.css */
+.todoList {
+    padding: 20px;
+    border: 1px solid hsl(189, 93%, 66%);
+    border-radius: 5px;
+    background-color: #bafcf6;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #c02e2e;
+    margin: 5px 0;
+    background-color: #a0f4a7;
+  }
+  
+  button {
+    background-color: #e5f15f;
+    color: rgb(221, 253, 36);
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
